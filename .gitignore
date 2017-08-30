@@ -1,0 +1,6 @@
+# mugsoftheworld ignores... 
+node_modules 
+*.log 
+*cache 
+.DS_Store 
+./server
