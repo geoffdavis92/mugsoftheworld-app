@@ -1,0 +1,9 @@
+{
+  "name": "MugsOfTheWorld",
+  "version": "0.0.0",
+  "description": "Digital display case of awesome mugs from around the world.",
+  "main": "index.js",
+  "repository": "https://github.com/geoffdavis92/mugsoftheworld.git",
+  "author": "Geoff Daivs <geoffdavis92@gmail.com>",
+  "license": "GNU GPLv3"
+}
