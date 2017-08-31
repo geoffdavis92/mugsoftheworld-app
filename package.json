@@ -2,8 +2,29 @@
   "name": "MugsOfTheWorld",
   "version": "0.0.0",
   "description": "Digital display case of awesome mugs from around the world.",
-  "main": "index.js",
+  "main": "docs/index.html",
   "repository": "https://github.com/geoffdavis92/mugsoftheworld.git",
-  "author": "Geoff Daivs <geoffdavis92@gmail.com>",
-  "license": "GNU GPLv3"
+  "author": "Geoff Davis <geoffdavis92@gmail.com>",
+  "license": "GNU GPLv3",
+  "scripts": {
+    "prettier": "./node_modules/prettier/bin/prettier.js {.,**}/*.js --write"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-preset-2017": "^0.0.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.5.0",
+    "prettier": "^1.6.1",
+    "webpack": "^3.5.5"
+  },
+  "dependencies": {
+    "react": "next",
+    "react-dom": "next",
+    "react-helmet": "^5.2.0",
+    "react-router": "^4.2.0",
+    "styled-components": "^2.1.2"
+  },
+  "prettier": {},
+  "eslint": {},
+  "babelrc": {}
 }
