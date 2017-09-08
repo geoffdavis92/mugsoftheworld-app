@@ -8,17 +8,20 @@
   "license": "GNU GPLv3",
   "scripts": {
     "prettier": "./node_modules/prettier/bin/prettier.js {.,**}/*.js --write",
-    "serve": "cd server && npm run server; cd -;"
+    "serve": "cd server && npm run server; cd -;",
+    "toserver": "cp -r assets/js server/assets/"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-preset-2017": "^0.0.0",
+    "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "eslint": "^4.5.0",
     "prettier": "^1.6.1",
     "webpack": "^3.5.5"
   },
   "dependencies": {
+    "mithril": "^1.1.3",
     "react": "next",
     "react-dom": "next",
     "react-helmet": "^5.2.0",
