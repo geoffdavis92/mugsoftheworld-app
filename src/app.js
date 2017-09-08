@@ -1,3 +1,4 @@
-import m from 'mithril'
+import React, { Component } from "react";
+import { render } from "react-dom";
 
-m.render(document.body,'HELLO WORLD')
+render(<p>hello react</p>, document.getElementById("app"));
