@@ -7,7 +7,8 @@
   "author": "Geoff Davis <geoffdavis92@gmail.com>",
   "license": "GNU GPLv3",
   "scripts": {
-    "prettier": "./node_modules/prettier/bin/prettier.js {.,**}/*.js --write"
+    "prettier": "./node_modules/prettier/bin/prettier.js {.,**}/*.js --write",
+    "serve": "cd server && npm run server; cd -;"
   },
   "devDependencies": {
     "babel-loader": "^7.1.2",
