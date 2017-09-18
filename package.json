@@ -7,28 +7,51 @@
   "author": "Geoff Davis <geoffdavis92@gmail.com>",
   "license": "GNU GPLv3",
   "scripts": {
-    "prettier": "./node_modules/prettier/bin/prettier.js {.,**}/*.js --write",
+    "postinstall": "yarn run prettier",
+    "test": "jest",
+    "prettier":
+      "./node_modules/prettier/bin/prettier.js {.,src/{.,**},server/{.,**}}/*.{js,json} --write",
     "serve": "cd server && npm run server; cd -;",
     "toserver": "cp -r assets/js server/assets/"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-jest": "^21.0.2",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-decorators": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "eslint": "^4.5.0",
+    "jest": "^21.0.2",
     "prettier": "^1.6.1",
     "webpack": "^3.5.5"
   },
   "dependencies": {
-    "mithril": "^1.1.3",
     "react": "next",
     "react-dom": "next",
     "react-helmet": "^5.2.0",
     "react-router": "^4.2.0",
     "styled-components": "^2.1.2"
   },
-  "prettier": {},
+  "prettier": {
+    "printWidth": 90,
+    "singleQuote": false,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "parser": "flow",
+    "semi": true
+  },
   "eslint": {},
-  "babelrc": {}
+  "jest": {
+    "testPathIgnorePatterns": ["./server"],
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  },
+  "babel": {
+    "presets": ["es2015", "react"],
+    "plugins": ["transform-decorators"]
+  }
 }

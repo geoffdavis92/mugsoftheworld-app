@@ -10,42 +10,43 @@ module.exports = {
   devtool: "inline-source-map",
   output: {
     path: path.join(`${__dirname}/assets/js/`),
-    filename: "app.js"
+    filename: "app.js",
   },
   resolve: {
     enforceExtension: false,
     extensions: [".js", ".jsx", ".json"],
     alias: {
-      layouts: path.resolve(__dirname, "src/layouts"),
       components: path.resolve(__dirname, "src/components"),
-      utilities: path.resolve(__dirname, "src/utilities")
-    }
+      utilities: path.resolve(__dirname, "src/utilities"),
+      views: path.resolve(__dirname, "src/views"),
+    },
   },
   module: {
     rules: [
       {
         test: /\.js(x)*$/,
         exclude: /node_modules/,
-        loader: "babel-loader?presets[]=es2017&presets[]=react"
-      }
-    ]
+        loader:
+          "babel-loader?presets[]=es2017&presets[]=react&plugins[]=transform-decorators",
+      },
+    ],
   },
   plugins: [
     process.env.NODE_ENV && process.env.NODE_ENV === "production"
       ? new webpack.DefinePlugin({
           "process.env": {
-            NODE_ENV: JSON.stringify("production")
-          }
+            NODE_ENV: JSON.stringify("production"),
+          },
         })
       : () => null,
     process.env.NODE_ENV && process.env.NODE_ENV === "production"
       ? new webpack.optimize.UglifyJsPlugin()
-      : () => null
+      : () => null,
   ],
   devServer: {
     contentBase: path.join(__dirname),
     compress: true,
     // hot: true,
-    port: 5555
-  }
+    port: 5555,
+  },
 };
